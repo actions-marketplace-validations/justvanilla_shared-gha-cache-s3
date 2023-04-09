@@ -2,18 +2,16 @@ name: Sync Upstream
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */2 * * *'
   workflow_dispatch:
+
+permissions: write-all
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: tgymnich/fork-sync@v1.8
+      - uses: fopina/upstream-to-pr@v1
         with:
-          owner: actions
-          repo: cache
-          base: main
-          head: main
-          retries: 2
-          retry_after: 5
+          token: ${{ secrets.GITHUB_TOKEN }}
+          upstream-repository: https://github.com/actions/cache
