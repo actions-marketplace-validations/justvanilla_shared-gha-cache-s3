@@ -9,7 +9,8 @@
     "test": "tsc --noEmit && jest --coverage",
     "lint": "eslint **/*.ts --cache --fix",
     "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts"
+    "format-check": "prettier --check **/*.ts",
+    "bump:patch": "npm version patch"
   },
   "repository": {
     "type": "git",
