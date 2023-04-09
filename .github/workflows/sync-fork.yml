@@ -2,7 +2,7 @@ name: Sync Upstream
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 permissions: write-all
@@ -14,4 +14,4 @@ jobs:
       - uses: fopina/upstream-to-pr@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          upstream-repository: https://github.com/actions/cache
+          upstream-repository: https://github.com/actions/cache.git
